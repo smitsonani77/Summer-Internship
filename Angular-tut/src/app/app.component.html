@@ -1,0 +1,73 @@
+<!-- here parent Component is -> app
+and child Component is -> child -->
+
+<!-- <app-directive></app-directive>
+<app-binding></app-binding> -->
+<!-- <h1>Parent Component</h1> -->
+<!-- <app-child [loggedIn] = "userLoggedIn"></app-child> -->
+<!-- <app-child [hero] = "users"></app-child> -->
+<!-- <div *ngFor="let data of users">
+    <app-child [hero] = "data"></app-child>
+</div> -->
+
+
+<!-- child to parent -->
+<!-- <app-child (parentFunction) = "parentFunction($event)"></app-child>
+<br><br><br>
+
+<div>
+    <h5>{{name}}</h5>
+    <h5>{{age}}</h5>
+</div> -->
+
+
+
+
+<!-- custom directive -->
+<!-- <p appHighlight>Highlight me!</p> -->
+
+<!-- <p [appHighlight]="color">Highlight me!</p> -->
+
+
+<!-- <h2>My First Attribute Directive</h2>
+
+<h3>Pick a highlight color</h3>
+<div>
+  <input type="radio" name="colors" (click)="color='blue'" id="b">
+  <label for="b">Blue</label><br>
+  <input type="radio" name="colors" (click)="color='yellow'" id="y">
+  <label for="y">Yellow</label><br>
+  <input type="radio" name="colors" (click)="color='cyan'" id="c">
+  <label for="c">Cyan</label><br>
+</div>
+<p [appHighlight] = "color" >Highlight me!</p>
+<p [appHighlight] = 'color' defaultColor = 'violet'> Highlight with default Color !</p>
+
+<div>
+    <h1 appHighlight>On hover</h1>
+</div> -->
+
+
+
+
+
+<!-- <h2>Reactive Form</h2> -->
+<!-- <app-form></app-form> -->
+
+<div>
+    <a routerLink="form">form</a><br>
+    <a routerLink="directive">Directive</a><br>
+    <a routerLink="binding">Binding</a><br>
+    <a routerLink="child">Child</a><br>
+    <a routerLink="dynamicForm">Dynamic Form</a>
+</div>
+
+<br><br>
+<h1>Lazy Loading</h1>
+<ul>
+    <li><a routerLink = "admin/login">Login</a><br></li>
+    <li><a routerLink = "admin/list">List</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,59 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "emp_id": 1000,
+      "fname": "smit",
+      "lname": "sonani",
+      "email": "smit.sonani@gmail.com",
+      "salary": 20000
+    },
+    {
+      "id": 2,
+      "emp_id": 2000,
+      "fname": "veet",
+      "lname": "moradiya",
+      "email": "veet.moradiya@gmail.com",
+      "salary": 20000
+    },
+    {
+      "id": 3,
+      "emp_id": 4000,
+      "fname": "bhautik",
+      "lname": "sudani",
+      "email": "bhautik@sudani.gmail.com",
+      "salary": 30000
+    },
+    {
+      "emp_id": 3000,
+      "fname": "yash",
+      "lname": "kavaiya",
+      "email": "yash.kavaiya@gmail.com",
+      "salary": 50000,
+      "id": 4
+    }
+  ],
+  "signUpEmployee": [
+    {
+      "fullname": "smit",
+      "email": "smit.sonani@gmail.com",
+      "password": "smit",
+      "mobile": 1234567890,
+      "id": 1
+    },
+    {
+      "fullname": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "mobile": 9999988888,
+      "id": 2
+    },
+    {
+      "fullname": "vraj shah",
+      "email": "vraj.shah@motorolasolutions.com",
+      "password": "vraj",
+      "mobile": 1234567890,
+      "id": 3
+    }
+  ]
+}

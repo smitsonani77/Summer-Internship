@@ -1,0 +1,80 @@
+<div class="container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <fieldset class="border p-2">
+      <legend class="float-none w-auto p-2">Reactive Form</legend>
+      <div>
+        <label for="fname">First Name </label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="firstName"
+          id="fname"
+        />
+        <span
+          *ngIf="firstName && firstName.invalid && firstName.touched"
+          class="text-danger"
+          >firstname is invalid</span
+        >
+      </div>
+      <br />
+      <div>
+        <label for="lname">Last Name </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+          id="lname"
+        />
+        <span
+          *ngIf="lastName && lastName.invalid && lastName.touched"
+          class="text-danger"
+          >lastname is invalid</span
+        >
+      </div>
+      <br />
+
+      <div>
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          class="form-control"
+          type="email"
+          id="eamil"
+        />
+        <span
+          *ngIf="email && email.invalid && email.touched"
+          class="text-danger"
+          >email is invalid</span
+        >
+      </div>
+      <br />
+      <div>
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          class="form-control"
+          type="password"
+          name=""
+          id="password"
+        />
+        <span
+          *ngIf="password && password.invalid && password.touched"
+          class="text-danger"
+          >password is invalid</span
+        >
+      </div>
+      <br />
+      <p>Complete the form to enable button.</p>
+      <button
+        class="btn btn-outline-primary"
+        type="submit"
+        [disabled]="!profileForm.valid"
+      >
+        Submit
+      </button>
+      <!-- <p>value - {{name.value}}</p>
+      <button (click) = "updateName()">Update Name</button> -->
+    </fieldset>
+  </form>
+  {{ this.profileForm.value | json }}
+</div>

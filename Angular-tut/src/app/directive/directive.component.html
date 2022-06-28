@@ -1,0 +1,99 @@
+<!-- <h1>NgFor</h1>
+<ul>
+    <li *ngFor="let person of people"> 
+      {{ person.name }}
+    </li>
+</ul>
+
+<br> -->
+
+
+
+<!-- 
+<h1>NgFor (group)</h1>
+<ul *ngFor = "let group of peopleByCountry">
+    <li>
+        {{group.country}}
+    </li>
+    <ul>
+        <li *ngFor = "let person of group.people">
+            {{person.name}}
+        </li>
+    </ul>
+</ul>
+<br> -->
+
+
+
+<!-- <h1>NgIf</h1>
+<ul *ngFor = "let person of people">
+    <li *ngIf = "person.age  > 30">
+        {{person.name}} {{person.age}}
+    </li>
+</ul>
+
+<br> -->
+
+
+
+<!-- 
+<h1>Ng Switch</h1>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.country === 'UK'">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'USA'">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'HK'" >
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li
+    *ngIf="
+      person.country !== 'HK' &&
+      person.country !== 'UK' &&
+      person.country !== 'USA'
+    "
+  >
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<br> -->
+
+
+
+
+
+<!-- <h1>Ng style</h1> -->
+
+<!-- <ul *ngFor="let person of people">
+    <li [ngStyle]="{'color':getColor(person.country)}"> {{ person.name }} ({{ person.country }})</li>
+</ul> -->
+
+<!-- // alternative  -->
+<!-- <ul *ngFor="let person of people">
+    <li [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country }})
+    </li>
+</ul> -->
+<!-- <br> -->
+
+
+
+
+<!-- <h4>NgClass</h4>
+<ul *ngFor="let person of people">
+  <li [ngClass]="{
+    'text-success':person.country === 'UK',
+    'text-primary':person.country === 'USA',
+    'text-danger':person.country === 'HK'
+  }">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+<br> -->
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Dynamically Add New Input Fields in Angular</h1>
+
+    <form action="" class="mt-3" [formGroup] = "productForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="pname">Product Name</label>
+            <input type="text" name="name" formControlName = "name" id="pname"  class="form-control ">
+        </div>
+
+        <table class="mt-3" formArrayName = "quantities">
+            <tr>
+                <th colspan="2" class="text-center">Add Multiple Quantity</th>
+                <th><button type="button" class="btn btn-outline-primary" (click) = "addQuantity()" >Add More</button></th>
+            </tr>
+
+            <tr *ngFor = "let product of quantities().controls; let i = index">
+                <td>
+                    Quantity
+                    <input class="form-control" type="text" formControlName = "qty">
+
+                </td>
+                <td>
+                    Price
+                    <input class="form-control" type="text" formControlName= "price">
+
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger" (click) = "removeQuantity(i)" type="button">Remove</button>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+    <br>
+    {{this.productForm.value | json}}  
+</div>
+
+
+
+

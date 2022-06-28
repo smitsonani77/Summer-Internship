@@ -1,0 +1,32 @@
+<h1>
+    {{ title }}
+  </h1>
+
+<div>
+  <img [src]="imageURL" alt="not available" width="300px" />
+</div>
+
+<div>
+  <button (click)="incrementCount()">Increment</button>
+  <p>count = {{ count }}</p>
+</div>
+
+<div>
+    <label >Name :</label>
+    <input #nameRef type="text" [(ngModel)] = "name">
+    <p>Welcome {{name}}</p>
+</div>
+
+<!-- Method 2 => spilting event and property binding -->
+<div>
+    <label >Username :</label>
+    <input type="text" [ngModel] = "userName" (ngModelChange) = "updateValue($event)">
+    <p>Welcome {{userName}}</p>
+</div>
+
+
+<div>
+    <label >cutomerName :</label>
+    <input type="text" [(ngModel)] = "customerName">
+    <p>Welcome {{customerName}}</p>
+</div>
