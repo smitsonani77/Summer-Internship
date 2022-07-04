@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { employeeTask } from 'src/app/model/employee_';
 import { CrudService } from 'src/app/service/crud.service';
+import { CustomValidator } from 'src/app/validators/custom-validator';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -21,9 +22,22 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
-      fullname: ['', [Validators.required,Validators.minLength(4),Validators.pattern("[A-Za-z]*")]],
-      email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: ['', [Validators.required]],
+      fullname: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(8),
+        CustomValidator.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+        CustomValidator.patternValidator(/[a-z]/,{hasSmallCase:true}),
+        CustomValidator.patternValidator(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,{hasSpecialCharacters:true})
+      ])],
+      email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-zA-Z0-9]{1,4}$")]],
+      password: [null, Validators.compose([
+        Validators.required,
+        CustomValidator.patternValidator(/\d/, { hasNumber: true }),
+        CustomValidator.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
+        CustomValidator.patternValidator(/[a-z]/, { hasSmallCase: true }),
+        CustomValidator.patternValidator(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,{ hasSpecialCharacters: true }),
+        Validators.minLength(8)
+      ])],
       mobile: ['', [Validators.required,Validators.pattern("[0-9]{10}")]],
     });
   }

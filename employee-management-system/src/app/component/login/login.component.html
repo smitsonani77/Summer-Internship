@@ -10,12 +10,12 @@
                     <div class="mb-3">
                       <label for="email" class="form-label">Email address</label>
                       <input type="email" formControlName = "email" class="form-control" id="email" aria-describedby="emailHelp">
-                      <span class="text-danger" *ngIf = "f.email && f.email.invalid && f.email.touched">Email is invalid</span>
+                      <span class="text-danger span" *ngIf = "f.email && f.email.invalid && f.email.touched" >Email is invalid</span>
                     </div>
                     <div class="mb-3">
                       <label for="pass"  class="form-label">Password</label>
                       <input type="password"  formControlName="password" class="form-control" id="pass">
-                      <span class="text-danger" *ngIf = "loginForm.controls['password'].dirty && loginForm.hasError('required','password')">Password is required</span>
+                      <span class="text-danger span" *ngIf = "f.password && f.password.invalid && f.password.touched">Password is required</span>
 
                     </div>
                     <!-- <div class="mb-3 form-check">

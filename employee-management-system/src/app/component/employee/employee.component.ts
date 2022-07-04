@@ -175,11 +175,10 @@ export class EmployeeComponent implements OnInit {
   }
 
   
-
   // logout
 
   logout(){
-    window.localStorage.removeItem('user');
+    // window.localStorage.removeItem('user');
     window.localStorage.removeItem('token');
   }
   

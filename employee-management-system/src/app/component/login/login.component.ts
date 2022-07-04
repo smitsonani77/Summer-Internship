@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(3),Validators.maxLength(8)]]
+        email:['',[Validators.required]],
+        password:['',[Validators.required]]
       });
   }
 
@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
       this.curdService.login()
       .subscribe(
         res => {
-
             // replace any with perticuler type
             const user = res.find((a:any) => {
               return (a.email === this.loginForm.value.email && a.password === this.loginForm.value.password);
